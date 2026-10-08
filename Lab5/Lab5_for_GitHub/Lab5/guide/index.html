@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>คู่มือเชิญเยือน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one centered reading column of glass cards over a soft pink→sky wash; screenshots framed as device/browser glass; numbered pink-ringed navy badges annotate the map. Single light theme by choice (matches the app). */
+:root{
+  color-scheme:light;
+  --pink:#e0457b; --pink-soft:#ffd6e6; --pink-wash:#fff1f6;
+  --sky:#38a9e8; --sky-soft:#d6efff; --sky-wash:#eef8ff;
+  --navy:#1b2a4a; --navy-2:#3b4b6b; --navy-3:#71809b;
+  --bg:#f6f8fc; --glass:rgba(255,255,255,.62); --glass-2:rgba(255,255,255,.86); --line:rgba(255,255,255,.9); --shade:rgba(27,42,74,.14);
+  --gold:#e0a400; --c-mu:#c99a06; --c-nature:#2f9e5b; --c-sea:#0f9bb0; --c-culture:#8a5bd1; --c-view:#2b7fd0; --ad:#7c4dff;
+  --f-head:"Prompt","Noto Sans Thai",-apple-system,"Thonburi",sans-serif;
+  --f-body:"Noto Sans Thai",-apple-system,"Thonburi","Leelawadee UI",sans-serif;
+  --r:24px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:var(--f-body);font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(40rem 30rem at 10% -5%,rgba(255,143,177,.35),transparent 60%),
+  radial-gradient(42rem 32rem at 100% 10%,rgba(56,169,232,.28),transparent 60%),
+  radial-gradient(36rem 30rem at 50% 105%,rgba(27,42,74,.10),transparent 60%),var(--bg)}
+a{color:var(--sky)}
+.wrap{max-width:980px;margin:0 auto;padding:28px 16px 64px}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 18px 40px -20px var(--shade)}
+h1,h2,h3{font-family:var(--f-head);color:var(--navy);letter-spacing:-.005em;text-wrap:balance;margin:0}
+h2{font-size:clamp(22px,3.2vw,28px);line-height:1.3;display:flex;align-items:center;gap:12px}
+h3{font-size:18px;line-height:1.4}
+p{margin:0}
+.muted{color:var(--navy-3)}
+
+/* hero */
+.hero{border-radius:32px;padding:28px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;overflow:hidden;position:relative}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.mark{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;color:#fff;font:700 22px var(--f-head);background:linear-gradient(140deg,var(--pink),#ff9a6b);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 8px 18px -8px var(--pink)}
+.brand b{font:700 22px var(--f-head);display:block;line-height:1.1}
+.brand small{color:var(--navy-3);font-size:13px}
+.hero h1{font-size:clamp(28px,4.6vw,44px);line-height:1.2}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--pink),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin-top:12px;color:var(--navy-2)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}
+.kpi{border-radius:18px;padding:10px 12px;background:var(--glass-2);border:1px solid var(--line)}
+.kpi b{display:block;font:700 24px var(--f-head);line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi small{font-size:11.5px;color:var(--navy-3)}
+.kpi:nth-child(1) b{color:var(--pink)}.kpi:nth-child(2) b{color:var(--gold)}.kpi:nth-child(3) b{color:var(--sky)}.kpi:nth-child(4) b{color:var(--navy)}
+.hero-shots{position:relative;min-height:340px}
+.hero-shots .desk{position:absolute;right:-60px;top:10px;width:118%;border-radius:16px;box-shadow:0 24px 50px -24px var(--shade);border:6px solid rgba(255,255,255,.85)}
+.hero-shots .phone{position:absolute;left:0;bottom:0;width:44%;border-radius:26px;border:6px solid #fff;box-shadow:0 24px 40px -18px rgba(27,42,74,.35)}
+
+/* toc */
+.toc{margin-top:18px;border-radius:22px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--glass-2);border:1px solid var(--line);color:var(--navy);text-decoration:none;font-size:13.5px;font-weight:600}
+.toc a:hover{background:var(--pink-wash)}
+
+/* sections */
+section{margin-top:22px;border-radius:var(--r);padding:24px}
+.emo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:linear-gradient(140deg,var(--pink-wash),var(--sky-wash));border:1px solid var(--line);flex:none}
+.lead{margin-top:10px;color:var(--navy-2);max-width:68ch}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.card{border-radius:18px;padding:14px 16px;background:var(--glass-2);border:1px solid var(--line);min-width:0}
+.card h3{font-size:16px;margin-bottom:4px}
+.card p,.card li{font-size:14.5px;color:var(--navy-2)}
+.step{position:relative;padding-top:18px}
+.step .n{position:absolute;top:-12px;left:14px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 14px var(--f-head);color:#fff;background:var(--navy);box-shadow:0 0 0 3px var(--pink-soft)}
+.tip{margin-top:14px;border-radius:16px;padding:12px 14px;background:linear-gradient(90deg,var(--pink-wash),var(--sky-wash));border:1px solid var(--line);font-size:14.5px}
+.warn{margin-top:14px;border-radius:16px;padding:12px 14px;background:#fff8e6;border:1px solid #ffe4a3;font-size:14.5px}
+
+/* figures */
+figure{margin:16px 0 0}
+figcaption{font-size:13px;color:var(--navy-3);margin-top:8px;text-align:center}
+.shot{position:relative;border-radius:16px;overflow:hidden;border:6px solid rgba(255,255,255,.9);box-shadow:0 20px 40px -24px var(--shade);background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.bar{display:flex;gap:6px;padding:8px 10px;background:rgba(255,255,255,.9);border-bottom:1px solid #eef1f6}
+.bar i{width:10px;height:10px;border-radius:50%;background:#ffd6e6}.bar i:nth-child(2){background:#d6efff}.bar i:nth-child(3){background:#dfe3ec}
+.badge{position:absolute;transform:translate(-50%,-50%);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:700 13px var(--f-head);color:#fff;background:var(--navy);box-shadow:0 0 0 3px #fff,0 0 0 6px var(--pink),0 6px 14px rgba(0,0,0,.25)}
+.phones{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.phone{width:min(210px,44vw);text-align:center}
+.phone img{width:100%;border-radius:26px;border:6px solid #fff;box-shadow:0 18px 34px -18px rgba(27,42,74,.35);display:block}
+.phone span{display:block;font-size:13px;color:var(--navy-3);margin-top:8px}
+
+/* key list */
+.key{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.key li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;font-size:14.5px}
+.key .k{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font:700 13px var(--f-head);color:#fff;background:var(--navy);box-shadow:0 0 0 3px var(--pink-soft)}
+.key b{color:var(--navy)}
+
+/* legend */
+.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.lg{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:16px;background:var(--glass-2);border:1px solid var(--line);font-size:14.5px}
+.dot{width:30px;height:30px;border-radius:50%;border:3px solid #fff;box-shadow:0 3px 8px rgba(0,0,0,.2);flex:none;display:grid;place-items:center;color:#fff;font-size:14px}
+.dot.win{box-shadow:0 0 0 3px var(--gold),0 3px 8px rgba(0,0,0,.2)}
+.dot.cl{background:#fff;color:var(--navy);font:700 12px var(--f-head);width:36px;height:36px;border:1px solid #e3e8f0}
+.dot.ad{background:var(--ad);font:800 10px var(--f-head)}
+
+/* tables */
+.tbl{overflow-x:auto;margin-top:14px;border-radius:16px;border:1px solid var(--line);background:var(--glass-2)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #eef1f6}
+th{font:600 13px var(--f-head);color:var(--navy-2);background:linear-gradient(90deg,var(--pink-wash),var(--sky-wash))}
+tr:last-child td{border-bottom:0}
+.yes{color:var(--c-nature);font-weight:700}.no{color:var(--pink);font-weight:700}.maybe{color:var(--gold);font-weight:700}
+
+/* precision bar */
+.stack{display:flex;height:22px;border-radius:999px;overflow:hidden;margin-top:14px;border:1px solid var(--line)}
+.stack i{display:block;height:100%}
+.stack-key{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:13px;color:var(--navy-2)}
+.stack-key span{display:inline-flex;align-items:center;gap:6px}
+.stack-key b{font-variant-numeric:tabular-nums}
+.sw{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+.cmp{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-top:16px}
+.cmp .vs{display:grid;place-items:center;font:700 16px var(--f-head);color:var(--navy-3)}
+.cmp .card b{display:block;font:700 22px var(--f-head);line-height:1.2;font-variant-numeric:tabular-nums}
+.src{font-size:12.5px;color:var(--navy-3);margin-top:10px}
+footer{margin-top:26px;text-align:center;font-size:12.5px;color:var(--navy-3)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding:22px}
+  .hero-shots{min-height:260px}
+  .hero-shots .desk{right:-30px;width:100%}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid2,.grid3,.key,.legend{grid-template-columns:1fr}
+  .cmp{grid-template-columns:1fr}.cmp .vs{padding:2px}
+  section{padding:18px}
+  .badge{width:22px;height:22px;font-size:11px;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--pink)}
+}
+@media print{
+  body::before{position:absolute}
+  .hero,.card,.lg,figure,tr,.phones,.key li,.cmp{break-inside:avoid}
+  h2{break-after:avoid}
+  .toc{display:none}
+  .shot{break-inside:avoid}
+  #screen,#popup,#layers,#share,#fix{break-before:page}
+}
+</style>
+
+</head><body>
+<div class="wrap">
+
+<header class="hero glass">
+  <div>
+    <div class="brand"><div class="mark">ช</div><div><b>เชิญเยือน</b><small>แผนที่อันซีน 77 จังหวัด · ดูคลิปจริงจาก TikTok</small></div></div>
+    <h1>📖 คู่มือการใช้งาน<br><em>Dashboard / Map Visualization</em></h1>
+    <p>✨ เชิญเยือนคือโบรชัวร์บนจอมือถือ รวม 77 แหล่งท่องเที่ยวอันซีน จังหวัดละ 1 แห่ง จากแคมเปญ Unseen New Chapters ของ ททท. ปี 2566 แตะหมุดเดียวก็ดูคลิปจริง นำทาง และเจอร้านในชุมชนใกล้จุดนั้น</p>
+    <div class="kpis">
+      <div class="kpi"><b>77</b><small>📍 แหล่งอันซีน</small></div>
+      <div class="kpi"><b>25</b><small>⭐ ได้รับเลือก</small></div>
+      <div class="kpi"><b>77</b><small>🗺️ จังหวัด</small></div>
+      <div class="kpi"><b>21</b><small>🏙️ จุดในจังหวัดตัวอย่าง</small></div>
+    </div>
+  </div>
+  <div class="hero-shots" aria-hidden="true">
+    <img class="desk" src="img/d1.jpg" alt="">
+    <img class="phone" src="img/m_pop.jpg" alt="">
+  </div>
+</header>
+
+<nav class="toc glass" aria-label="สารบัญ">
+  <a href="#start">🚀 เริ่มใน 3 ขั้น</a><a href="#screen">🗺️ รู้จักหน้าจอ</a><a href="#pins">🎨 สีหมุด</a><a href="#popup">💬 ป๊อปอัป</a><a href="#tabs">📊 แท็บทั้ง 4</a><a href="#layers">🧩 ชั้นข้อมูล</a><a href="#mobile">📱 มือถือ</a><a href="#share">🔗 แชร์ไป TikTok</a><a href="#open">🌐 วิธีเปิด</a><a href="#data">📐 ความแม่นยำ</a><a href="#fix">🛠️ แก้ปัญหา</a>
+</nav>
+
+<section id="concept" class="glass">
+  <h2><span class="emo">💡</span>ทำไมต้องเป็น “โบรชัวร์บนจอมือถือ”</h2>
+  <p class="lead">ป้ายบิลบอร์ดอยู่ได้จุดเดียวและแพง ส่วนเชิญเยือนอยู่ในมือนักท่องเที่ยวทุกคนที่กดลิงก์จาก TikTok โฆษณาของร้านในชุมชนจึงขึ้นตรงหน้าสถานที่ที่เขากำลังสนใจ และนับยอดกดได้ทุกครั้ง</p>
+  <div class="cmp">
+    <div class="card"><h3>🪧 ป้ายบิลบอร์ด</h3><b>1 แสน – 2.2 ล้าน</b><p>บาท/เดือน/ป้าย (ตัวอย่างเรทในกรุงเทพฯ) อยู่ได้จุดเดียว วัดผลยาก</p></div>
+    <div class="vs">VS</div>
+    <div class="card" style="background:linear-gradient(140deg,#fff,var(--pink-wash))"><h3>📱 เชิญเยือน</h3><b>~990 บาท/เดือน</b><p>ต่อหมุดโฆษณา (ราคาเสนอ สมมติ) ขึ้นตรงจุด รู้ยอดเปิด กดนำทาง และกดไป TikTok</p></div>
+  </div>
+  <p class="src">ที่มา: เรทบิลบอร์ดจาก Thumbsup (2562) · โฆษณา TikTok ในไทย CPM US$0.90–2.60 จาก Stackmatix (2026)</p>
+</section>
+
+<section id="start" class="glass">
+  <h2><span class="emo">🚀</span>เริ่มใช้งานใน 3 ขั้น</h2>
+  <div class="grid3">
+    <div class="card step"><span class="n">1</span><h3>🌐 เปิดแอป</h3><p>เปิดลิงก์เว็บ หรือดับเบิลคลิกไฟล์ <b>chern-yuean-index.html</b> แผนที่ประเทศไทยพร้อมหมุด 77 แห่งจะขึ้นทันที</p></div>
+    <div class="card step"><span class="n">2</span><h3>🔎 เลือกสิ่งที่สนใจ</h3><p>กดชิปภาค เช่น <b>อีสาน</b> หรือ <b>⭐ 25 แห่ง</b> พิมพ์ค้นหาชื่อจังหวัด หรือแตะแท่งกราฟประเภท เช่น <b>สายมู</b></p></div>
+    <div class="card step"><span class="n">3</span><h3>👆 แตะหมุด</h3><p>ป๊อปอัปจะบอกว่าที่นี่คืออะไร กด <b>▶ ดูคลิปบน TikTok</b> เพื่อดูบรรยากาศจริง แล้วกด <b>🧭 นำทาง</b> เพื่อไปเลย</p></div>
+  </div>
+</section>
+
+<section id="screen" class="glass">
+  <h2><span class="emo">🗺️</span>รู้จักหน้าจอ Dashboard</h2>
+  <p class="lead">หน้าจอแบ่งเป็นแผงควบคุมกระจกใสด้านซ้าย แผนที่ตรงกลาง และปุ่มควบคุมด้านขวาบน ตัวเลขบนภาพตรงกับคำอธิบายด้านล่าง</p>
+  <figure>
+    <div class="shot"><div class="bar"><i></i><i></i><i></i></div>
+      <div style="position:relative"><img src="img/d1.jpg" alt="หน้าจอหลักของเชิญเยือนบนคอมพิวเตอร์">
+        <span class="badge" style="left:26.5%;top:11.7%">1</span>
+        <span class="badge" style="left:26.5%;top:18.4%">2</span>
+        <span class="badge" style="left:26.5%;top:26.6%">3</span>
+        <span class="badge" style="left:26.5%;top:38%">4</span>
+        <span class="badge" style="left:26.5%;top:61%">5</span>
+        <span class="badge" style="left:46%;top:15.5%">6</span>
+        <span class="badge" style="left:40.5%;top:42%">7</span>
+        <span class="badge" style="left:36%;top:30%">8</span>
+        <span class="badge" style="left:94%;top:14%">9</span>
+        <span class="badge" style="left:56%;top:97%">10</span>
+      </div></div>
+    <figcaption>ภาพที่ 1 หน้าจอหลักบนคอมพิวเตอร์ (มุมมองทั้งประเทศ)</figcaption>
+  </figure>
+  <ol class="key">
+    <li><span class="k">1</span><span><b>🔎 ช่องค้นหา</b> พิมพ์ชื่อสถานที่ จังหวัด หรืออำเภอ ถ้าไม่เจอจะมีปุ่มค้นคำนั้นบน TikTok ให้</span></li>
+    <li><span class="k">2</span><span><b>🧭 ชิปภูมิภาค + ⭐ 25 แห่ง</b> กรองตามภาค หรือดูเฉพาะแหล่งที่ ททท. เลือก</span></li>
+    <li><span class="k">3</span><span><b>🗂️ แท็บ 4 แท็บ</b> ภาพรวม · สถานที่ · นครสวรรค์ · ลงโฆษณา</span></li>
+    <li><span class="k">4</span><span><b>🔢 ตัวเลขสรุป</b> จำนวนแหล่งที่แสดง ที่ได้รับเลือก จังหวัด และจุดในจังหวัดตัวอย่าง เปลี่ยนตามตัวกรอง</span></li>
+    <li><span class="k">5</span><span><b>📊 กราฟแท่ง</b> แยกตามภาค ประเภท และความแม่นยำของหมุด แตะแท่งเพื่อกรองบนแผนที่</span></li>
+    <li><span class="k">6</span><span><b>⭐ หมุดวงทอง</b> 1 ใน 25 แห่งที่ได้รับเลือก สีด้านในบอกประเภท</span></li>
+    <li><span class="k">7</span><span><b>🔵 วงกลมตัวเลข</b> หมุดหลายจุดที่อยู่ใกล้กัน แตะเพื่อซูมเข้า ★ บอกจำนวนแหล่งที่ได้รับเลือกในกลุ่ม</span></li>
+    <li><span class="k">8</span><span><b>🩷 เส้นขอบชมพู</b> นครสวรรค์ จังหวัดตัวอย่างที่ซูมเข้าไปแล้วเห็นอีก 21 จุด</span></li>
+    <li><span class="k">9</span><span><b>🎛️ ปุ่มควบคุม</b> ชั้นข้อมูล · ตำแหน่งของฉัน · ดูทั้งประเทศ · ซูม + / −</span></li>
+    <li><span class="k">10</span><span><b>📝 แหล่งที่มา</b> เครดิตแผนที่และข้อมูล แตะ ⓘ เพื่อดูเต็ม</span></li>
+  </ol>
+</section>
+
+<section id="pins" class="glass">
+  <h2><span class="emo">🎨</span>ความหมายของสีหมุด</h2>
+  <p class="lead">ดูสีก็รู้ประเภทก่อนแตะ หมุดที่มีวงทองและดาวคือแหล่งที่ได้รับเลือก</p>
+  <div class="legend">
+    <div class="lg"><span class="dot" style="background:var(--c-mu)">🙏</span><span><b>สายมู</b> วัด ศาลเจ้า สิ่งศักดิ์สิทธิ์ (30 แห่ง)</span></div>
+    <div class="lg"><span class="dot" style="background:var(--c-nature)">🌿</span><span><b>ธรรมชาติ</b> ผา ถ้ำ น้ำตก ทะเลหมอก (22 แห่ง)</span></div>
+    <div class="lg"><span class="dot" style="background:var(--c-culture)">🏛️</span><span><b>วัฒนธรรม & ชุมชน</b> พิพิธภัณฑ์ ตลาดเก่า ชุมชน (13 แห่ง)</span></div>
+    <div class="lg"><span class="dot" style="background:var(--c-sea)">🌊</span><span><b>ทะเล & เกาะ</b> เกาะ หาด อ่าว (6 แห่ง)</span></div>
+    <div class="lg"><span class="dot" style="background:var(--c-view)">🏙️</span><span><b>วิว & แลนด์มาร์ก</b> จุดชมวิว หอคอย (6 แห่ง)</span></div>
+    <div class="lg"><span class="dot win" style="background:var(--c-nature)">⭐</span><span><b>วงทอง + ดาว</b> 1 ใน 25 แห่งที่ ททท. เลือก</span></div>
+    <div class="lg"><span class="dot cl">5</span><span><b>วงกลมตัวเลข</b> กลุ่มหมุดใกล้กัน แตะเพื่อซูม</span></div>
+    <div class="lg"><span class="dot ad">AD</span><span><b>หมุดโฆษณา</b> ร้านตัวอย่าง (สมมติ) 6 จุด</span></div>
+  </div>
+</section>
+
+<section id="popup" class="glass">
+  <h2><span class="emo">💬</span>ป๊อปอัปของแต่ละสถานที่</h2>
+  <p class="lead">แตะหมุดแล้วป๊อปอัปกระจกใสจะเด้งขึ้นเหนือหมุด ทุกปุ่มเปิดในแท็บใหม่</p>
+  <div class="grid2" style="align-items:start">
+    <figure style="margin:0"><div class="shot" style="max-width:380px;margin:0 auto"><img src="img/pop_crop.jpg" alt="ป๊อปอัปของมอหินขาว"></div><figcaption>ภาพที่ 2 ป๊อปอัป “มอหินขาว” 1 ใน 25 แห่งที่ได้รับเลือก</figcaption></figure>
+    <div class="card">
+      <h3>🔘 ปุ่มและข้อมูลในป๊อปอัป</h3>
+      <ul style="margin:6px 0 0;padding-left:18px">
+        <li><b>⭐ ป้ายบนสุด</b> บอกว่าเป็น 1 ใน 25 แห่ง หรือผู้เข้ารอบตัวแทนจังหวัด</li>
+        <li><b>▶ ดูคลิปบน TikTok</b> เปิดผลค้นหาคลิปจริงของที่นี่</li>
+        <li><b>🧭 นำทาง</b> เปิด Google Maps พาไปจุดจริง</li>
+        <li><b>📍 กล่องเทา</b> บอกว่าหมุดแม่นระดับไหน</li>
+        <li><b>💜 กล่องเส้นประม่วง</b> ผู้สนับสนุนใกล้จุดนี้ (ตัวอย่าง) หรือ “พื้นที่โฆษณาว่าง”</li>
+        <li><b>🍜 ของกิน จ.…</b> ค้นคลิปของกินของจังหวัดนั้น</li>
+        <li><b># แฮชแท็ก</b> เปิดหน้าแฮชแท็กบน TikTok</li>
+        <li><b>🔗 คัดลอกลิงก์</b> ลิงก์ที่เปิดหมุดนี้ทันที</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tabs" class="glass">
+  <h2><span class="emo">📊</span>แท็บทั้ง 4</h2>
+  <div class="grid2">
+    <div class="card"><h3>📊 ภาพรวม</h3><p>ตัวเลขสรุป 4 ช่อง กราฟแท่งตามภาค (แท่งเข้ม = ได้รับเลือก แท่งจาง = ผู้เข้ารอบ) ตามประเภท และความแม่นยำของหมุด แตะกราฟเพื่อกรอง และมีปุ่มดูคลิป Unseen บน TikTok</p></div>
+    <div class="card"><h3>📍 สถานที่</h3><p>รายชื่อแหล่งอันซีน ⭐ ขึ้นก่อน แตะชื่อแล้วแผนที่บินไปที่หมุด ถ้ากดตำแหน่งของฉันไว้ จะเรียงจากใกล้ไปไกลพร้อมระยะทาง</p></div>
+    <div class="card"><h3>🏙️ นครสวรรค์</h3><p>จังหวัดตัวอย่าง 21 จุดใน 5 หมวด เช่น พาสาน หอชมเมือง บึงบอระเพ็ด ตลาดชุมแสง กด “ซูมไปนครสวรรค์” เพื่อดูโบรชัวร์ระดับจังหวัด</p></div>
+    <div class="card"><h3>💸 ลงโฆษณา</h3><p>เทียบบิลบอร์ดกับ TikTok แพ็กเกจราคาเสนอ 3 แบบ (หมุด AD 990 · การ์ดในป๊อปอัป 2,990 · ฉากในซีรีส์ 9,900 บาท) และร้านตัวอย่าง 6 ร้าน</p></div>
+  </div>
+  <div class="grid2">
+    <figure><div class="shot"><img src="img/nsz.jpg" alt="ซูมเข้านครสวรรค์"></div><figcaption>ภาพที่ 3 แท็บนครสวรรค์: จาก 1 หมุดอันซีนเป็น 21 จุด</figcaption></figure>
+    <figure><div class="shot"><img src="img/ads.jpg" alt="แท็บลงโฆษณา"></div><figcaption>ภาพที่ 4 แท็บลงโฆษณาและหมุด AD ตัวอย่าง</figcaption></figure>
+  </div>
+</section>
+
+<section id="layers" class="glass">
+  <h2><span class="emo">🧩</span>ชั้นข้อมูลและแผนที่ฐาน</h2>
+  <p class="lead">กดปุ่มรูปแผ่นซ้อน (บนสุดของแถวขวา) เพื่อเปิดแผงชั้นข้อมูล</p>
+  <div class="grid2" style="align-items:start">
+    <figure style="margin:0"><div class="shot"><img src="img/lay.jpg" alt="แผงชั้นข้อมูล"></div><figcaption>ภาพที่ 5 แผงชั้นข้อมูล</figcaption></figure>
+    <div>
+      <div class="card"><h3>📢 หมุดโฆษณา (ตัวอย่าง)</h3><p>เปิดไว้เป็นค่าเริ่มต้น หมุด AD จะขึ้นเมื่อซูมเข้าใกล้พอ</p></div>
+      <div class="card" style="margin-top:10px"><h3>🏙️ จังหวัดตัวอย่าง</h3><p>เปิดไว้ ซูมเข้านครสวรรค์แล้วจะเห็นหมุดเล็กอีก 21 จุด</p></div>
+      <div class="card" style="margin-top:10px"><h3>🛰️ แผนที่ / ดาวเทียม / ถนน</h3><p>แอปพยายามเปิด <b>ดาวเทียม</b> ให้เองตอนเริ่ม ถ้าโหลดไม่ได้จะใช้แผนที่ในตัวแอป ดาวเทียมใช้ Sentinel-2 cloudless (สำรองด้วย Esri) ส่วนถนนใช้ CARTO/OpenStreetMap</p></div>
+    </div>
+  </div>
+  <div class="tip">🛰️ ภาพดาวเทียมและแผนที่ถนนโหลดจากเว็บภายนอก จึงเห็นได้เมื่อเปิดจาก Netlify หรือจากไฟล์ในเครื่อง ส่วนลิงก์ claude.ai จะแสดงแผนที่ในตัวแอปแทน</div>
+</section>
+
+<section id="mobile" class="glass">
+  <h2><span class="emo">📱</span>ใช้บนมือถือ</h2>
+  <p class="lead">บนมือถือ แผนที่อยู่ครึ่งบน แผงควบคุมกลายเป็นแผ่นเลื่อนจากด้านล่าง</p>
+  <div class="phones">
+    <div class="phone"><img src="img/m_map.jpg" alt="หน้าแรกบนมือถือ"><span>🗺️ หน้าแรก</span></div>
+    <div class="phone"><img src="img/m_dash.jpg" alt="แท็บภาพรวมบนมือถือ"><span>📊 ภาพรวม (ขยายเต็ม)</span></div>
+    <div class="phone"><img src="img/m_list.jpg" alt="แท็บสถานที่บนมือถือ"><span>📍 รายชื่อสถานที่</span></div>
+    <div class="phone"><img src="img/m_pop.jpg" alt="ป๊อปอัปบนมือถือ"><span>💬 ป๊อปอัป</span></div>
+  </div>
+  <div class="grid3">
+    <div class="card"><h3>☝️ แถบเทาด้านบน</h3><p>แตะเพื่อสลับขนาดแผง เต็มจอ → ย่อ → ปกติ</p></div>
+    <div class="card"><h3>📍 แตะหมุด</h3><p>แผงย่อลงเองให้เห็นป๊อปอัป แตะที่ว่างบนแผนที่เพื่อคืนขนาด</p></div>
+    <div class="card"><h3>🔎 แตะช่องค้นหา</h3><p>แผงขยายเต็มจอให้พิมพ์และเลือกผลได้ง่าย</p></div>
+  </div>
+</section>
+
+<section id="share" class="glass">
+  <h2><span class="emo">🔗</span>แชร์ลิงก์หมุดไป TikTok</h2>
+  <p class="lead">ทุกหมุดมีลิงก์ของตัวเอง เอาไปวางในไบโอหรือคอมเมนต์ TikTok คนดูกดแล้วเข้าแอปพร้อมเปิดหมุดนั้นทันที</p>
+  <div class="grid3">
+    <div class="card step"><span class="n">1</span><h3>👆 แตะหมุด</h3><p>กด <b>🔗 คัดลอกลิงก์</b> ในป๊อปอัป</p></div>
+    <div class="card step"><span class="n">2</span><h3>📋 วางใน TikTok</h3><p>ไบโอ คอมเมนต์ปักหมุด หรือแคปชันคลิป</p></div>
+    <div class="card step"><span class="n">3</span><h3>✨ คนดูกดลิงก์</h3><p>แอปบินไปที่หมุดและเปิดป๊อปอัปให้เอง</p></div>
+  </div>
+  <div class="tip">🔗 ลิงก์หน้าตาแบบ <b>&lt;ลิงก์แอป&gt;#p-u16</b> (พาสาน) หรือ <b>#p-ns-boraphet</b> (บึงบอระเพ็ด) แอปไม่ได้เก็บหรือฝังคลิปไว้ ทุกปุ่มแค่เปิดหน้าค้นหาหรือแฮชแท็กบน TikTok</div>
+</section>
+
+<section id="open" class="glass">
+  <h2><span class="emo">🌐</span>วิธีเปิดแอป 3 แบบ</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>วิธีเปิด</th><th>ทำอย่างไร</th><th>🛰️ ดาวเทียม / ถนน</th><th>📍 ตำแหน่งของฉัน</th><th>👥 ใครเปิดได้</th></tr></thead>
+    <tbody>
+      <tr><td><b>☁️ เว็บ Netlify</b></td><td>เปลี่ยนชื่อไฟล์เป็น index.html ลากไปวางที่ app.netlify.com/drop แล้วกด Claim this site ภายใน 1 ชั่วโมง</td><td class="yes">ได้</td><td class="yes">ได้</td><td>ทุกคนที่มีลิงก์</td></tr>
+      <tr><td><b>💻 ไฟล์ในเครื่อง</b></td><td>ดับเบิลคลิก chern-yuean-index.html (ต้องต่อเน็ต)</td><td class="maybe">น่าจะได้ ยังไม่ได้ทดสอบ</td><td class="maybe">ขึ้นกับเบราว์เซอร์</td><td>คนที่ได้ไฟล์</td></tr>
+      <tr><td><b>🤖 ลิงก์ claude.ai</b></td><td>เปิดลิงก์แอปใน Claude</td><td class="no">ไม่ได้</td><td class="no">ไม่ได้</td><td>เฉพาะคนที่กด Share ให้</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn">⚠️ อัปโหลดขึ้น Netlify เฉพาะไฟล์ HTML ไฟล์เดียว อย่าอัปโหลดไฟล์ Word หรือ zip เพราะมีชื่อและรหัสนักศึกษา แพ็กเกจฟรีของ Netlify ไม่ต้องใส่บัตรเครดิต</div>
+</section>
+
+<section id="data" class="glass">
+  <h2><span class="emo">📐</span>ข้อมูลและความแม่นยำของหมุด</h2>
+  <p class="lead">มี 3 จาก 77 หมุดที่วางตรงจุดจริง ที่เหลือเป็นจุดกลางอำเภอหรือจังหวัด ดูภาพรวมได้ แต่เวลาเดินทางให้กด 🧭 นำทางเสมอ เพราะปุ่มนี้ค้นชื่อจริงใน Google Maps</p>
+  <div class="stack" role="img" aria-label="จุดจริง 3, ระดับอำเภอ 22, ระดับจังหวัด 52">
+    <i style="width:3.9%;background:var(--c-nature)"></i><i style="width:28.6%;background:var(--sky)"></i><i style="width:67.5%;background:#c5cee0"></i>
+  </div>
+  <div class="stack-key"><span><i class="sw" style="background:var(--c-nature)"></i>🎯 จุดจริง <b>3</b></span><span><i class="sw" style="background:var(--sky)"></i>🏘️ ระดับอำเภอ <b>22</b></span><span><i class="sw" style="background:#c5cee0"></i>🗺️ ระดับจังหวัด <b>52</b></span></div>
+  <div class="grid2">
+    <div class="card"><h3>✅ มีอะไรบ้าง</h3><p>รายชื่อ 77 แห่งครบทุกจังหวัด · คำบรรยายและอำเภอของ 25 แห่งที่ได้รับเลือก · จังหวัดตัวอย่างนครสวรรค์ 21 จุดพร้อมเวลาเปิดและค่าเข้า</p></div>
+    <div class="card"><h3>⚠️ ข้อจำกัด</h3><p>อีก 52 แห่งมีแค่ชื่อและจังหวัด · ร้าน AD และราคาแพ็กเกจเป็นตัวอย่างสมมติ · ผลค้นหา TikTok อาจมีคลิปไม่ตรง · ภาพดาวเทียม Sentinel-2 ใช้ฟรีเฉพาะงานไม่แสวงกำไร (CC BY-NC-SA 4.0)</p></div>
+  </div>
+  <p class="src">📚 ที่มา: <a href="https://www.thansettakij.com/business/tourism/565025" target="_blank" rel="noopener">ฐานเศรษฐกิจ (รายชื่อ 77 แห่ง)</a> · <a href="https://www.khaosod.co.th/lifestyle/travel/news_7737703" target="_blank" rel="noopener">ข่าวสด (25 แห่ง + อำเภอ)</a> · <a href="https://thestandard.co/life/25-unseen-new-chapters-thailand/" target="_blank" rel="noopener">THE STANDARD (คำบรรยาย)</a> · <a href="https://www.ktc.co.th/article/travel-guide/thailand/travel-in-nakhonsawan" target="_blank" rel="noopener">KTC (นครสวรรค์)</a> · <a href="https://github.com/chingchai/OpenGISData-Thailand" target="_blank" rel="noopener">OpenGISData-Thailand</a> · <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> · <a href="https://s2maps.eu" target="_blank" rel="noopener">Sentinel-2 cloudless (EOX)</a></p>
+</section>
+
+<section id="fix" class="glass">
+  <h2><span class="emo">🛠️</span>แก้ปัญหาที่พบบ่อย</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>😕 อาการ</th><th>🔍 สาเหตุ</th><th>✅ วิธีแก้</th></tr></thead>
+    <tbody>
+      <tr><td>กด “ดาวเทียม” แล้วขึ้นว่าโหลดไม่ได้</td><td>เปิดจากลิงก์ claude.ai ซึ่งไม่ให้โหลดภาพจากเว็บอื่น</td><td>เปิดจาก Netlify หรือดับเบิลคลิกไฟล์ HTML</td></tr>
+      <tr><td>ปุ่มตำแหน่งของฉันไม่ทำงาน</td><td>ยังไม่อนุญาตตำแหน่ง หรือเปิดจาก claude.ai</td><td>เปิดจาก Netlify แล้วกดอนุญาตตำแหน่ง</td></tr>
+      <tr><td>Netlify ขึ้นหน้าว่างหรือ Page not found</td><td>ลากไฟล์ zip หรือไฟล์ที่ไม่ได้ชื่อ index.html</td><td>เปลี่ยนชื่อเป็น index.html แล้วลากไฟล์เดียวใหม่</td></tr>
+      <tr><td>เว็บ Netlify หายหรือถามรหัสผ่าน</td><td>ยังไม่ได้ Claim</td><td>กด Claim this site แล้วสมัครบัญชีฟรี</td></tr>
+      <tr><td>แผนที่ไม่ขึ้นเลย</td><td>ไม่ได้ต่อเน็ต</td><td>ต่อเน็ตแล้วรีเฟรชหน้า</td></tr>
+      <tr><td>หาหมุดที่ต้องการไม่เจอ</td><td>ถูกรวมเป็นกลุ่ม หรือตัวกรองค้างอยู่</td><td>แตะวงกลมตัวเลข หรือกด “ทั้งประเทศ” และปิดชิป ⭐</td></tr>
+      <tr><td>ปุ่มคัดลอกลิงก์ไม่คัดลอก</td><td>เบราว์เซอร์ไม่ให้เข้าคลิปบอร์ด</td><td>แอปจะแสดงลิงก์ในแถบแจ้งเตือน ให้คัดลอกเอง</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>🩷 เชิญเยือน · คู่มือการใช้งานเวอร์ชัน 8 ต.ค. 2569 · จัดทำโดย นายสุรนาจ เครือวาท · Lab 5 AI for Business Planning</footer>
+</div>
+
+</body></html>
